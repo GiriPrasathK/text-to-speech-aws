@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">📄 Text-to-Speech Converter</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data" class="mt-4">
+            <div class="mb-3">
+                <label for="text_file" class="form-label">Upload a Text File:</label>
+                <input type="file" class="form-control" id="text_file" name="text_file" accept=".txt" required>
+            </div>
+            <div class="mb-3">
+                <label for="text_input" class="form-label">Or Enter Text Manually:</label>
+                <textarea class="form-control" id="text_input" name="text_input" rows="4" placeholder="Type or paste text here..."></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="voice" class="form-label">Select Voice:</label>
+                <select class="form-select" id="voice" name="voice">
+                    <option value="Joanna">Joanna (English - US)</option>
+                    <option value="Matthew">Matthew (English - US)</option>
+                    <option value="Aditi">Aditi (English - Indian)</option>
+                    <option value="Emma">Emma (English - British)</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Convert to Speech 🎤</button>
+        </form>
+    </div>
+</body>
+</html>
 
