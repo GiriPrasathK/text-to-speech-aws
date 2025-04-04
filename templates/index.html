@@ -23,6 +23,7 @@
             width: 100%;
             padding: 10px;
             border-radius: 5px;
+            margin-bottom: 10px;
         }
         select, button {
             padding: 10px;
@@ -45,19 +46,21 @@
     <div class="container">
         <h2>Text-to-Speech Converter</h2>
         <form method="POST">
-            <textarea name="text" rows="5" placeholder="Enter text here..."></textarea><br>
+            <textarea name="text" rows="5" placeholder="Enter text here..." required></textarea><br>
             <select name="voice">
                 <option value="Joanna">Joanna (English)</option>
                 <option value="Matthew">Matthew (English)</option>
             </select><br>
             <button type="submit">Convert to Speech</button>
         </form>
-    
+
+        {% if audio_base64 %}
             <h3>Audio Output:</h3>
             <audio controls>
                 <source src="data:audio/mp3;base64,{{ audio_base64 }}" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
+        {% endif %}
     </div>
 </body>
 </html>
